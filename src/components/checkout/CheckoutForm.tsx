@@ -18,6 +18,7 @@ const CheckoutForm: React.FC = () => {
     phone: '',
     email: '',
     order_type: 'pickup',
+    payment_method: 'cash',
     address: '',
     location_description: '',
   });
@@ -41,6 +42,7 @@ const CheckoutForm: React.FC = () => {
       phone: formData.phone,
       email: formData.email,
       order_type: formData.order_type,
+      payment_method: formData.payment_method,
       address: formData.address,
       location_description: formData.location_description,
       items: state.items.map(item => ({
@@ -183,6 +185,72 @@ const CheckoutForm: React.FC = () => {
             className="px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
             placeholder="Istruzioni speciali..."
           />
+        </div>
+      </div>
+
+      <div className="bg-white shadow-soft rounded-2xl p-6 sm:p-8">
+        <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">Metodo di Pagamento</h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <label className={`
+            relative flex flex-col items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200
+            ${formData.payment_method === 'cash' 
+              ? 'border-green-500 bg-green-50 text-green-700' 
+              : 'border-gray-200 hover:border-gray-300 text-gray-600'}
+          `}>
+            <input
+              type="radio"
+              name="payment_method"
+              value="cash"
+              checked={formData.payment_method === 'cash'}
+              onChange={handleChange}
+              className="sr-only"
+            />
+            <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span className="font-medium">Contanti</span>
+          </label>
+
+          <label className={`
+            relative flex flex-col items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200
+            ${formData.payment_method === 'satispay' 
+              ? 'border-green-500 bg-green-50 text-green-700' 
+              : 'border-gray-200 hover:border-gray-300 text-gray-600'}
+          `}>
+            <input
+              type="radio"
+              name="payment_method"
+              value="satispay"
+              checked={formData.payment_method === 'satispay'}
+              onChange={handleChange}
+              className="sr-only"
+            />
+            <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            <span className="font-medium">Satispay</span>
+          </label>
+
+          <label className={`
+            relative flex flex-col items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200
+            ${formData.payment_method === 'card' 
+              ? 'border-green-500 bg-green-50 text-green-700' 
+              : 'border-gray-200 hover:border-gray-300 text-gray-600'}
+          `}>
+            <input
+              type="radio"
+              name="payment_method"
+              value="card"
+              checked={formData.payment_method === 'card'}
+              onChange={handleChange}
+              className="sr-only"
+            />
+            <svg className="w-8 h-8 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+            </svg>
+            <span className="font-medium">Carta/Bancomat</span>
+          </label>
         </div>
       </div>
 

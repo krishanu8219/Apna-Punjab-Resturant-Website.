@@ -84,7 +84,7 @@ export async function sendOrderEmail(order: Order, orderId: string) {
   try {
     // Send to Restaurant
     await resend.emails.send({
-      from: 'Apna Punjab <onboarding@resend.dev>',
+      from: 'Apna Punjab Pizza Kebab <onboarding@resend.dev>',
       to: [process.env.RESTAURANT_EMAIL],
       subject: `🍕 Nuovo Ordine da ${order.customer_name} - €${order.total_price.toFixed(2)}`,
       html: html,
@@ -93,9 +93,9 @@ export async function sendOrderEmail(order: Order, orderId: string) {
     // Send to Customer if email is provided
     if (order.email) {
       await resend.emails.send({
-        from: 'Apna Punjab <onboarding@resend.dev>',
+        from: 'Apna Punjab Pizza Kebab <onboarding@resend.dev>',
         to: [order.email],
-        subject: `Conferma Ordine #${orderId.slice(-6)} - Apna Punjab`,
+        subject: `Conferma Ordine #${orderId.slice(-6)} - Apna Punjab Pizza Kebab`,
         html: html,
       });
     }

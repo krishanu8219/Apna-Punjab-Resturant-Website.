@@ -8,7 +8,11 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-gray-50 via-white to-gray-50 text-gray-900;
+    @apply bg-desi-cream text-gray-900;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(194, 24, 7, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(255, 195, 11, 0.15) 0%, transparent 50%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -23,22 +27,60 @@
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
   }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .desi-pattern {
+    background-image: 
+      radial-gradient(circle at center, transparent 0%, transparent 35%, rgba(255, 153, 51, 0.05) 35%, rgba(255, 153, 51, 0.05) 36%, transparent 36%),
+      radial-gradient(circle at center, transparent 0%, transparent 45%, rgba(194, 24, 7, 0.05) 45%, rgba(194, 24, 7, 0.05) 46%, transparent 46%),
+      repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 195, 11, 0.05) 35px, rgba(255, 195, 11, 0.05) 70px);
+  }
+
+  .desi-gradient {
+    @apply bg-gradient-to-r from-desi-saffron via-desi-chili to-desi-royal;
+  }
+
+  .desi-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-desi-saffron to-desi-chili;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-soft hover:shadow-soft-lg hover:scale-105 active:scale-95;
+    @apply bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 border-2 border-yellow-400;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-gray-900 font-semibold py-3 px-6 rounded-xl border-2 border-gray-200 transition-all duration-200 hover:border-primary-300 hover:shadow-soft;
+    @apply bg-white hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-600 text-orange-600 hover:text-white font-bold py-3 px-8 rounded-full border-3 border-orange-500 transition-all duration-200 hover:shadow-xl;
   }
 
   .card {
-    @apply bg-white shadow-soft rounded-2xl p-6 transition-all duration-200 hover:shadow-soft-lg;
+    @apply bg-white shadow-lg rounded-2xl p-6 transition-all duration-200 hover:shadow-2xl border-2 border-yellow-300 relative overflow-hidden;
+  }
+
+  .card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary-400 focus:ring-4 focus:ring-primary-100 transition-all outline-none;
+    @apply w-full px-4 py-3 border-3 border-orange-300 rounded-xl focus:border-red-500 focus:ring-4 focus:ring-orange-200 transition-all outline-none font-medium;
   }
 }

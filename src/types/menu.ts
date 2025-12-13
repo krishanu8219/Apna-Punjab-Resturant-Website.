@@ -9,11 +9,12 @@ export type MenuCategoryId =
   | 'gamberi'
   | 'riso'
   | 'pane'
-  | 'varie'
   | 'contorni'
   | 'dolci'
   | 'bevande'
-  | 'birre';
+  | 'birre'
+  | 'menu'
+  | 'piatti';
 
 export interface MenuItem {
   id: string;

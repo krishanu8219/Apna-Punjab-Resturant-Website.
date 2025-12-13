@@ -3,48 +3,75 @@
 import React from 'react';
 import Link from 'next/link';
 import { useCart } from '@/contexts/CartContext';
-import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const Header: React.FC = () => {
   const { state } = useCart();
   const itemCount = state.items.reduce((sum, item) => sum + item.quantity, 0);
 
+  // Check if restaurant is open
+  const isOpen = () => {
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+
+    if (day === 0) { // Sunday
+      return hour >= 18 && hour < 23;
+    }
+    // Monday-Saturday
+    return hour >= 11 && hour < 23;
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 shadow-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform">
-              <span className="text-white text-xl font-bold">👳🏽‍♂️</span>
-            </div>
-            <span className="text-2xl font-display font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
-              Apna Punjab
-            </span>
-          </Link>
-          
-          <nav className="flex items-center space-x-2 sm:space-x-4">
-            <ThemeToggle />
-            <Link 
-              href="/menu" 
-              className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors rounded-xl hover:bg-primary-50 dark:hover:bg-gray-800"
-            >
-              Menù
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-red-600 via-orange-500 to-orange-400 shadow-lg">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div className="bg-red-700/40 backdrop-blur-md rounded-3xl px-6 py-3 border border-white/20 shadow-xl">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="flex flex-col group">
+              <span className="text-2xl sm:text-3xl font-display font-bold text-white drop-shadow-lg tracking-wide">
+                APNA PUNJAB <span className="text-yellow-300">PIZZA KEBAB</span>
+              </span>
+              <span className="text-[10px] sm:text-xs font-bold text-yellow-200 tracking-widest">AUTHENTIC INDIAN & PAKISTANI CUISINE</span>
             </Link>
-            <Link 
-              href="/cart" 
-              className="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all rounded-xl hover:bg-primary-50 dark:hover:bg-gray-800 flex items-center space-x-2"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              <span className="hidden sm:inline">Carrello</span>
-              {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center shadow-soft animate-pulse">
-                  {itemCount}
+
+            <div className="flex items-center space-x-3">
+              <div className={`hidden sm:flex items-center px-4 py-2 rounded-full shadow-lg ${
+                isOpen() 
+                  ? 'bg-green-500' 
+                  : 'bg-gray-500'
+              }`}>
+                <span className="text-white font-bold text-sm tracking-wide">
+                  {isOpen() ? '● APERTO ORA' : '● IL NEGOZIO È CHIUSO'}
                 </span>
-              )}
-            </Link>
-          </nav>
+              </div>
+
+              <div className="hidden sm:flex items-center bg-green-500 px-4 py-2 rounded-full shadow-lg">
+                <span className="text-white font-bold text-sm tracking-wide">✓ 100% HALAL</span>
+              </div>
+
+              <nav className="flex items-center space-x-2">
+                <Link
+                  href="/menu"
+                  className="px-4 py-2 bg-transparent text-white font-bold hover:bg-white/20 transition-all rounded-full border-2 border-white/50 text-sm"
+                >
+                  MENÙ
+                </Link>
+                <Link
+                  href="/cart"
+                  className="relative px-4 py-2 bg-yellow-400 text-red-700 font-bold hover:bg-yellow-300 transition-all rounded-full shadow-lg flex items-center space-x-2 text-sm"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  <span className="hidden sm:inline">CARRELLO</span>
+                  {itemCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-lg animate-bounce border-2 border-white">
+                      {itemCount}
+                    </span>
+                  )}
+                </Link>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </header>

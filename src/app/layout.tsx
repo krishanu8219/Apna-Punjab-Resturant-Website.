@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Lato } from 'next/font/google';
+import { Playfair_Display, Lato, Bebas_Neue, Poppins } from 'next/font/google';
 import './globals.css';
 import { CartProvider } from '@/contexts/CartContext';
-import { ThemeProvider } from '@/contexts/ThemeContext';
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -10,10 +9,17 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const lato = Lato({ 
-  weight: ['400', '700'],
+const bebasNeue = Bebas_Neue({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-lato',
+  variable: '--font-bebas',
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  weight: ['400', '600', '700', '800'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -28,13 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it" className={`${playfair.variable} ${lato.variable}`}>
-      <body className="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
-        <ThemeProvider>
-          <CartProvider>
-            {children}
-          </CartProvider>
-        </ThemeProvider>
+    <html lang="it" className={`${playfair.variable} ${poppins.variable} ${bebasNeue.variable}`}>
+      <body className="font-sans antialiased bg-gray-50 text-gray-900">
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

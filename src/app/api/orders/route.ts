@@ -89,6 +89,7 @@ export async function POST(request: Request) {
       phone: body.phone.trim(),
       email: body.email?.trim() || '',
       order_type: body.order_type,
+      payment_method: body.payment_method || 'cash',
       address: body.address?.trim() || '',
       location_description: body.location_description?.trim() || '',
       items: body.items,
