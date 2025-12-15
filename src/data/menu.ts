@@ -560,7 +560,7 @@ const menuItems: MenuItem[] = [
     description: 'Bevanda cremosa allo yogurt e mango',
     price: 4.0,
     categoryId: 'bevande',
-    image: '/Images/Lassi al mango.png',
+    image: '/Images/Lassi Al Mango.png',
   },
   {
     id: 'lassi-rossa',
@@ -576,7 +576,7 @@ const menuItems: MenuItem[] = [
     description: 'Bevanda tradizionale allo yogurt salato',
     price: 4.0,
     categoryId: 'bevande',
-    image: '/Images/Lassi salato.png',
+    image: '/Images/Lassi Salato.png',
   },
   {
     id: 'red-bull',
