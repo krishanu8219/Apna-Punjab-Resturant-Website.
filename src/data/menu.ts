@@ -524,7 +524,7 @@ const menuItems: MenuItem[] = [
     description: 'Cavolfiori e Patate con spezie Indiane e Pomodoro',
     price: 5.0,
     categoryId: 'contorni',
-    image: '/Images/aloo gobbi.png',
+    image: '/Images/Aloo gobbi.png',
   },
   {
     id: 'sabji-baji',
