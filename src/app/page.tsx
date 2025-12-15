@@ -35,8 +35,8 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-red-600 via-orange-500 to-orange-400 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-400/30 to-purple-900/60"></div>
+        <section className="relative bg-gradient-to-br from-black via-gray-800 to-gray-700 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-700/30 to-gray-900/60"></div>
           <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.15) 35px, rgba(255,255,255,0.15) 70px)`
           }}></div>
@@ -61,11 +61,11 @@ export default function HomePage() {
                 <div className="flex-1 text-center">
                   <div className="hidden sm:block text-6xl mb-2">🌶️</div>
                   <div className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold italic" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase' }}>
-                    <span className="text-white" style={{ WebkitTextStroke: '2px #ff6b00' }}>Sapori </span>
-                    <span className="text-gray-300" style={{ WebkitTextStroke: '2px #ff6b00' }}>Autentici</span>
+                    <span className="text-white" style={{ WebkitTextStroke: '2px #374151' }}>Sapori </span>
+                    <span className="text-gray-300" style={{ WebkitTextStroke: '2px #374151' }}>Autentici</span>
                   </div>
                   <div className="mt-2">
-                    <span className="text-yellow-400 italic font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase', WebkitTextStroke: '2px #d97706' }}>Consegnati Con Amore</span>
+                    <span className="text-gray-400 italic font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase', WebkitTextStroke: '2px #1f2937' }}>Consegnati Con Amore</span>
                   </div>
                   <div className="hidden sm:block text-6xl mt-2">🌶️</div>
                 </div>
@@ -85,13 +85,13 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
                 <a
                   href="#menu"
-                  className="w-full sm:w-auto px-10 py-4 bg-white text-desi-chili font-bold rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 border-4 border-desi-gold text-lg"
+                  className="w-full sm:w-auto px-10 py-4 bg-white text-black font-bold rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 border-4 border-gray-700 text-lg"
                 >
                   🍛 Vedi il Menù
                 </a>
                 <a
                   href="tel:+393206879063"
-                  className="w-full sm:w-auto px-10 py-4 bg-desi-green text-white font-bold rounded-full border-4 border-white hover:bg-green-700 hover:scale-110 transition-all duration-300 shadow-2xl inline-flex items-center justify-center space-x-3 text-lg"
+                  className="w-full sm:w-auto px-10 py-4 bg-gray-700 text-white font-bold rounded-full border-4 border-white hover:bg-gray-600 hover:scale-110 transition-all duration-300 shadow-2xl inline-flex items-center justify-center space-x-3 text-lg"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -130,23 +130,23 @@ export default function HomePage() {
         </section>
 
         {/* Full Menu */}
-        <section id="menu" className="py-20 sm:py-28 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden border-t-8 border-desi-saffron">
+        <section id="menu" className="py-20 sm:py-28 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden border-t-8 border-gray-800">
           <div className="absolute inset-0 opacity-5 desi-pattern"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in relative z-10">
             <div className="text-center mb-20">
               <div className="inline-block mb-6">
                 <div className="flex items-center justify-center space-x-4">
-                  <div className="w-20 h-12 bg-orange-400 rounded-full flex items-center justify-center shadow-xl"></div>
-                  <h2 className="text-5xl sm:text-6xl md:text-7xl font-heading font-bold text-orange-600 tracking-wider" style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}>
+                  <div className="w-20 h-12 bg-gray-700 rounded-full flex items-center justify-center shadow-xl"></div>
+                  <h2 className="text-5xl sm:text-6xl md:text-7xl font-heading font-bold text-gray-800 tracking-wider" style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}>
                     IL NOSTRO MENÙ
                   </h2>
-                  <div className="w-0 h-0 border-t-[50px] border-t-transparent border-l-[80px] border-l-red-600 border-b-[50px] border-b-transparent"></div>
+                  <div className="w-0 h-0 border-t-[50px] border-t-transparent border-l-[80px] border-l-gray-900 border-b-[50px] border-b-transparent"></div>
                 </div>
               </div>
               <p className="text-gray-700 dark:text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed font-bold">
                 Esplora la nostra ampia selezione di piatti autentici<br />
                 Esplora la nostra ampia selezione di piatti autentici<br />
-                <span className="text-red-600 dark:text-desi-saffron font-heading text-2xl" style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}>DAI CURRY ALLE PIZZE COTTE A LEGNA</span>
+                <span className="text-gray-900 dark:text-gray-200 font-heading text-2xl" style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}>DAI CURRY ALLE PIZZE COTTE A LEGNA</span>
               </p>
             </div>
 

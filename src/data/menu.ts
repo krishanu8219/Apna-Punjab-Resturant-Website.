@@ -640,7 +640,7 @@ const menuItems: MenuItem[] = [
     description: 'Acqua naturale 50 cl',
     price: 1.0,
     categoryId: 'bevande',
-    image: '/Images/Acqua naturale.png',
+    image: '/Images/Acqua naturale .png',
   },
   {
     id: 'acqua-frizzante',
