@@ -458,7 +458,7 @@ const menuItems: MenuItem[] = [
     description: 'Pane integrale cotto al forno tandoor',
     price: 1.5,
     categoryId: 'pane',
-    image: '/Images/Roti.png',
+    image: '/Images/roti.png',
   },
   {
     id: 'aloo-paratha',
@@ -524,7 +524,7 @@ const menuItems: MenuItem[] = [
     description: 'Cavolfiori e Patate con spezie Indiane e Pomodoro',
     price: 5.0,
     categoryId: 'contorni',
-    image: '/Images/Aloo Gobbi.png',
+    image: '/Images/aloo gobbi.png',
   },
   {
     id: 'sabji-baji',
