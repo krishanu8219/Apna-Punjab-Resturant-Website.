@@ -524,7 +524,7 @@ const menuItems: MenuItem[] = [
     description: 'Cavolfiori e Patate con spezie Indiane e Pomodoro',
     price: 5.0,
     categoryId: 'contorni',
-    image: '/Images/Sabji baji.png',
+    image: '/Images/Aloo Gobbi.png',
   },
   {
     id: 'sabji-baji',
@@ -563,8 +563,8 @@ const menuItems: MenuItem[] = [
     image: '/Images/Lassi al mango.png',
   },
   {
-    id: 'lassi-al-fragola',
-    name: 'Lassi al fragola',
+    id: 'lassi-rossa',
+    name: 'Lassi rossa',
     description: 'Bevanda rinfrescante allo yogurt e fragola',
     price: 4.0,
     categoryId: 'bevande',
@@ -577,14 +577,6 @@ const menuItems: MenuItem[] = [
     price: 4.0,
     categoryId: 'bevande',
     image: '/Images/Lassi salato.png',
-  },
-  {
-    id: 'lassi-al-cocco',
-    name: 'Lassi al cocco',
-    description: 'Bevanda rinfrescante allo yogurt e cocco',
-    price: 4.0,
-    categoryId: 'bevande',
-    image: '/Images/Succo di mango 1 l.png',
   },
   {
     id: 'red-bull',
@@ -628,19 +620,19 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 'the-pesca',
-    name: 'Thé pesca',
+    name: 'Tè pesca',
     description: 'Tè freddo alla pesca',
     price: 2.0,
     categoryId: 'bevande',
-    image: '/Images/Sprite lattina 33 cl.png',
+    image: '/Images/Te pesca.png',
   },
   {
     id: 'the-limone',
-    name: 'Thé limone',
+    name: 'Tè limone',
     description: 'Tè freddo al limone',
     price: 2.0,
     categoryId: 'bevande',
-    image: '/Images/Sprite lattina 33 cl.png',
+    image: '/Images/Te limone.png',
   },
   {
     id: 'acqua-naturale',
@@ -648,7 +640,7 @@ const menuItems: MenuItem[] = [
     description: 'Acqua naturale 50 cl',
     price: 1.0,
     categoryId: 'bevande',
-    image: '/Images/Acqua naturale.png',
+    image: '/Images/Acqua naturale 1.png',
   },
   {
     id: 'acqua-frizzante',
@@ -656,7 +648,7 @@ const menuItems: MenuItem[] = [
     description: 'Acqua frizzante 50 cl',
     price: 1.0,
     categoryId: 'bevande',
-    image: '/Images/Acqua frizzante.png',
+    image: '/Images/Acqua frizzante 1.png',
   },
 
   // BIRRE

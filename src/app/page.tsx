@@ -53,8 +53,8 @@ export default function HomePage() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-8 leading-tight drop-shadow-2xl tracking-wider flex items-center justify-center gap-0 sm:gap-4 lg:gap-8">
                 <div className="w-40 sm:w-64 lg:w-80 flex-shrink-0">
                   <img 
-                    src="/Images/punjabi-chef.png" 
-                    alt="Chef" 
+                    src="/Images/flying-pizza.png" 
+                    alt="Pizza" 
                     className="w-full h-auto animate-float drop-shadow-2xl"
                   />
                 </div>
@@ -69,12 +69,11 @@ export default function HomePage() {
                   </div>
                   <div className="hidden sm:block text-6xl mt-2">🌶️</div>
                 </div>
-                <div className="hidden lg:block w-80 flex-shrink-0">
+                <div className="w-40 sm:w-64 lg:w-80 flex-shrink-0 hidden lg:block">
                   <img 
-                    src="/Images/punjabi-lady.png" 
-                    alt="Server" 
+                    src="/Images/samosa-platter.png" 
+                    alt="Samosa Platter" 
                     className="w-full h-auto animate-float drop-shadow-2xl"
-                    style={{ animationDelay: '1s' }}
                   />
                 </div>
               </h1>

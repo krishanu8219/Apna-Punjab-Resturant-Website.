@@ -1,25 +1,32 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/contexts/CartContext';
 
 const Header: React.FC = () => {
   const { state } = useCart();
   const itemCount = state.items.reduce((sum, item) => sum + item.quantity, 0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Check if restaurant is open
-  const isOpen = () => {
-    const now = new Date();
-    const day = now.getDay();
-    const hour = now.getHours();
+  useEffect(() => {
+    setMounted(true);
+    
+    const checkIfOpen = () => {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
 
-    if (day === 0) { // Sunday
-      return hour >= 18 && hour < 23;
-    }
-    // Monday-Saturday
-    return hour >= 11 && hour < 23;
-  };
+      if (day === 0) { // Sunday
+        return hour >= 18 && hour < 23;
+      }
+      // Monday-Saturday
+      return hour >= 11 && hour < 23;
+    };
+
+    setIsOpen(checkIfOpen());
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-red-600 via-orange-500 to-orange-400 shadow-lg">
@@ -34,15 +41,17 @@ const Header: React.FC = () => {
             </Link>
 
             <div className="flex items-center space-x-3">
-              <div className={`hidden sm:flex items-center px-4 py-2 rounded-full shadow-lg ${
-                isOpen() 
-                  ? 'bg-green-500' 
-                  : 'bg-gray-500'
-              }`}>
-                <span className="text-white font-bold text-sm tracking-wide">
-                  {isOpen() ? '● APERTO ORA' : '● IL NEGOZIO È CHIUSO'}
-                </span>
-              </div>
+              {mounted && (
+                <div className={`hidden sm:flex items-center px-4 py-2 rounded-full shadow-lg ${
+                  isOpen 
+                    ? 'bg-green-500' 
+                    : 'bg-gray-500'
+                }`}>
+                  <span className="text-white font-bold text-sm tracking-wide">
+                    {isOpen ? '● APERTO ORA' : '● IL NEGOZIO È CHIUSO'}
+                  </span>
+                </div>
+              )}
 
               <div className="hidden sm:flex items-center bg-green-500 px-4 py-2 rounded-full shadow-lg">
                 <span className="text-white font-bold text-sm tracking-wide">✓ 100% HALAL</span>
