@@ -624,7 +624,7 @@ const menuItems: MenuItem[] = [
     description: 'Tè freddo alla pesca',
     price: 2.0,
     categoryId: 'bevande',
-    image: '/Images/Te pesca.png',
+    image: '/Images/Te Pesca.png',
   },
   {
     id: 'the-limone',
@@ -632,7 +632,7 @@ const menuItems: MenuItem[] = [
     description: 'Tè freddo al limone',
     price: 2.0,
     categoryId: 'bevande',
-    image: '/Images/Te limone.png',
+    image: '/Images/Te Limone.png',
   },
   {
     id: 'acqua-naturale',
@@ -640,7 +640,7 @@ const menuItems: MenuItem[] = [
     description: 'Acqua naturale 50 cl',
     price: 1.0,
     categoryId: 'bevande',
-    image: '/Images/Acqua naturale 1.png',
+    image: '/Images/Acqua naturale.png',
   },
   {
     id: 'acqua-frizzante',
@@ -648,7 +648,7 @@ const menuItems: MenuItem[] = [
     description: 'Acqua frizzante 50 cl',
     price: 1.0,
     categoryId: 'bevande',
-    image: '/Images/Acqua frizzante 1.png',
+    image: '/Images/Acqua Frizante.png',
   },
 
   // BIRRE
