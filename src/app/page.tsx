@@ -35,46 +35,48 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-black via-gray-800 to-gray-700 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-700/30 to-gray-900/60"></div>
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.15) 35px, rgba(255,255,255,0.15) 70px)`
-          }}></div>
+        <section className="relative text-white overflow-hidden">
+          {/* Video Background */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
 
             <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
-              <div className="inline-block mb-8">
-                <span className="px-6 py-2 rounded-full text-sm font-bold tracking-wide uppercase inline-flex items-center space-x-2 shadow-lg bg-green-500 text-white border border-white/20">
-                  <span>✓ 100% HALAL</span>
-                </span>
+              <div className="mb-0">
+                <svg viewBox="0 0 600 150" className="w-full max-w-3xl mx-auto" style={{ overflow: 'visible' }}>
+                  <path id="curve" d="M 50,120 Q 300,30 550,120" fill="transparent" />
+                  <text className="text-white font-bold tracking-widest" style={{ fontSize: '70px', fontFamily: 'Impact, "Arial Black", sans-serif', fill: 'white', stroke: '#374151', strokeWidth: '3px' }}>
+                    <textPath href="#curve" startOffset="50%" textAnchor="middle">
+                      APNA PUNJAB
+                    </textPath>
+                  </text>
+                </svg>
               </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-8 leading-tight drop-shadow-2xl tracking-wider flex items-center justify-center gap-0 sm:gap-4 lg:gap-8">
-                <div className="w-40 sm:w-64 lg:w-80 flex-shrink-0">
-                  <img 
-                    src="/Images/flying-pizza.png" 
-                    alt="Pizza" 
-                    className="w-full h-auto animate-float drop-shadow-2xl"
-                  />
-                </div>
-                <div className="flex-1 text-center">
-                  <div className="hidden sm:block text-6xl mb-2">🌶️</div>
-                  <div className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold italic" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase' }}>
-                    <span className="text-white" style={{ WebkitTextStroke: '2px #374151' }}>Sapori </span>
-                    <span className="text-gray-300" style={{ WebkitTextStroke: '2px #374151' }}>Autentici</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold mb-8 leading-tight drop-shadow-2xl tracking-wider">
+                <div className="text-center">
+                  <div className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold italic" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase' }}>
+                    <span className="text-white" style={{ WebkitTextStroke: '1.6px #374151' }}>Sapori </span>
+                    <span className="text-gray-300" style={{ WebkitTextStroke: '1.6px #374151' }}>Autentici</span>
                   </div>
-                  <div className="mt-2">
-                    <span className="text-gray-400 italic font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase', WebkitTextStroke: '2px #1f2937' }}>Consegnati Con Amore</span>
+                  <div className="mt-2 mb-4">
+                    <span className="text-gray-400 italic font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black" style={{ fontFamily: 'Impact, "Arial Black", sans-serif', textTransform: 'uppercase', WebkitTextStroke: '1.6px #1f2937' }}>Consegnati Con Amore</span>
                   </div>
-                  <div className="hidden sm:block text-6xl mt-2">🌶️</div>
-                </div>
-                <div className="w-40 sm:w-64 lg:w-80 flex-shrink-0 hidden lg:block">
-                  <img 
-                    src="/Images/samosa-platter.png" 
-                    alt="Samosa Platter" 
-                    className="w-full h-auto animate-float drop-shadow-2xl"
-                  />
+                  <div className="inline-block">
+                    <span className="px-7 py-2.5 rounded-full text-base font-bold tracking-wide uppercase inline-flex items-center space-x-2 shadow-lg bg-green-500 text-white border border-white/20">
+                      <span>✓ 100% HALAL</span>
+                    </span>
+                  </div>
                 </div>
               </h1>
 

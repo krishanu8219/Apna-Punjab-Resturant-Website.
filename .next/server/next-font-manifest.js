@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/krishanu8219/Apna Punjab/apna-punjab-pizza-kebap/src/app/layout\":[\"static/media/6c25f6e897d845a3-s.p.woff2\",\"static/media/eaead17c7dbfcd5d-s.p.woff2\",\"static/media/eafabf029ad39a43-s.p.woff2\",\"static/media/0484562807a97172-s.p.woff2\",\"static/media/b957ea75a84b6ea7-s.p.woff2\",\"static/media/7db6c35d839a711c-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
