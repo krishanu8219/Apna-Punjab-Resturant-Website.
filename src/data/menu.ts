@@ -847,7 +847,7 @@ const menuItems: MenuItem[] = [
     description: 'Polpette di ceci, insalata, pomodoro, cipolla, salse',
     price: 5.0,
     categoryId: 'kebab',
-    image: '/Images/Rotolo Falafel.png',
+    image: '/Images/Rotolo falafel.png',
   },
   // BURGER & NUGGETS
   {
@@ -880,7 +880,7 @@ const menuItems: MenuItem[] = [
     description: 'Bocconcini di pollo impanati e fritti',
     price: 5.0,
     categoryId: 'burger_nuggets',
-    image: '/Images/Chicken Nuggets.png',
+    image: '/Images/Chicken nuggets.png',
   },
   {
     id: 'alette-pollo',
@@ -888,7 +888,7 @@ const menuItems: MenuItem[] = [
     description: 'Alette di pollo impanate e fritte',
     price: 4.0,
     categoryId: 'burger_nuggets',
-    image: '/Images/Chicken Wings.png',
+    image: '/Images/Chicken wings.png',
   },
   {
     id: 'hotdog',
