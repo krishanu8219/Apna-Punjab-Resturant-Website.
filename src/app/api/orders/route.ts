@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sendOrderEmail } from '@/lib/email';
-import { sendWhatsAppNotification } from '@/lib/whatsapp';
+import { sendTelegramNotification } from '@/lib/telegram';
 import { Order } from '@/types/order';
 
 export async function POST(request: Request) {
@@ -101,13 +101,15 @@ export async function POST(request: Request) {
     // Send Email Notification
     const emailSent = await sendOrderEmail(order, orderId);
     
-    // Send WhatsApp notification (non-blocking)
-    sendWhatsAppNotification(order).catch((error) => {
-      console.error('Failed to send WhatsApp notification:', error);
-    });
+    // Send Telegram notification
+    const telegramSent = await sendTelegramNotification(order);
 
     if (!emailSent) {
-       console.warn('Email failed to send, but order processed via WhatsApp/Local');
+       console.warn('Email failed to send, but order processed via Telegram');
+    }
+    
+    if (!telegramSent) {
+       console.warn('Telegram notification failed to send');
     }
 
     return NextResponse.json(

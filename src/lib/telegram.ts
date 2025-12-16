@@ -3,7 +3,7 @@ import { Order } from '@/types/order';
 /**
  * Send Telegram notification to restaurant
  */
-export async function sendWhatsAppNotification(order: Order): Promise<boolean> {
+export async function sendTelegramNotification(order: Order): Promise<boolean> {
   const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {

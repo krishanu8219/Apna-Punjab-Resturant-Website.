@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { sendWhatsAppNotification } from '@/lib/whatsapp';
+import { sendTelegramNotification } from '@/lib/telegram';
 
 export async function POST(request: Request) {
     const { orderId, customerName, customerPhone } = await request.json();
@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     }
 
     try {
-        // Note: This endpoint is kept for compatibility but WhatsApp notifications
+        // Note: This endpoint is kept for compatibility but Telegram notifications
         // are now sent directly from the orders route
         return NextResponse.json({ message: 'Notification endpoint - use orders route instead' }, { status: 200 });
     } catch (error) {
