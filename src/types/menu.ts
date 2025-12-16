@@ -14,7 +14,9 @@ export type MenuCategoryId =
   | 'bevande'
   | 'birre'
   | 'menu'
-  | 'piatti';
+  | 'piatti'
+  | 'kebab'
+  | 'burger_nuggets';
 
 export interface MenuItem {
   id: string;
