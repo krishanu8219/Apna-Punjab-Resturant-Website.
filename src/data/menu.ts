@@ -868,11 +868,11 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 'patatine',
-    name: 'Patatine',
+    name: 'Patatine fritte',
     description: 'Patatine fritte croccanti',
     price: 3.0,
     categoryId: 'burger_nuggets',
-    image: '/Images/Patatine Fritte.png',
+    image: '/Images/Patatine.png',
   },
   {
     id: 'chicken-nuggets',
